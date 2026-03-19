@@ -47,10 +47,23 @@ void example_3()
   print(t);
 }
 
+void example_4()
+{
+  std::cout << "== example 4 ==\n";
+  time_of_day t{12, 57};
+  time_of_day *p = &t;
+  unsigned char *h = &((*p).h);
+  unsigned char *m = &(p->m);
+  *h = 13; // <=> t.h = 13;
+  *m = 58; // <=> t.m = 58;
+  print(t);
+}
+
 int main()
 {
   example_1();
   example_2();
   example_3();
+  example_4();
   return 0;
 }
